@@ -1,0 +1,35 @@
+{
+  "name": "morsejs-render-webaudio",
+  "version": "0.0.1",
+  "description": "Plugin to render morsejs output through the HTML WebAudio API",
+  "main": "src/morsejs-render-webaudio",
+  "scripts": {
+    "test": "karma start conf/karma.conf.js --single-run --browsers PhantomJS",
+    "lint": "jslint js/**/*.js src/**/*.js",
+    "doc": "jsdoc -c conf/jsdoc.json"
+  },
+  "keywords": [
+    "morsejs",
+    "morse",
+    "WebAudio"
+  ],
+  "author": "Stephen K",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "jsdoc": "^3.4.0",
+    "jslint": "^0.9.6",
+    "karma-coverage": "^0.5.3",
+    "karma-phantomjs-launcher": "^0.2.3",
+    "morsejs": "^0.0.4",
+    "karma": "^0.13.19",
+    "phantomjs": "^1.9.19",
+    "karma-jasmine": "^0.3.6"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "morsejs": "^0.0.3"
+  }
+}

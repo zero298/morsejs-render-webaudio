@@ -30,6 +30,14 @@
     "test": "test"
   },
   "dependencies": {
-    "morsejs": "^0.0.3"
-  }
+    "morsejs": "^0.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zero298/morsejs-render-webaudio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zero298/morsejs-render-webaudio/issues"
+  },
+  "homepage": "https://github.com/zero298/morsejs-render-webaudio#readme"
 }

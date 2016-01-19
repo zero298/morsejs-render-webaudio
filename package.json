@@ -1,6 +1,6 @@
 {
   "name": "morsejs-render-webaudio",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Plugin to render morsejs output through the HTML WebAudio API",
   "main": "src/morsejs-render-webaudio",
   "scripts": {
@@ -21,7 +21,6 @@
     "jslint": "^0.9.6",
     "karma-coverage": "^0.5.3",
     "karma-phantomjs-launcher": "^0.2.3",
-    "morsejs": "^0.0.4",
     "karma": "^0.13.19",
     "phantomjs": "^1.9.19",
     "karma-jasmine": "^0.3.6"

@@ -21,6 +21,9 @@ It is moderately difficult to write automated unit tests for a node.js project t
 ## Usage
 
 ```javascript
-var mrwa = require("morsejs/render/WebAudio");
-mrwa.playMorse(mAudio, translatedMessage);
+var morsejs = require("morsejs"),
+    morsejsRenderWebAudio = require("morsejs-render-webaudio"),
+    translatedMessage = morsejs.translate("hello");
+    
+morsejsRenderWebAudio.playMorse(new AudioContext(), translatedMessage);
 ```

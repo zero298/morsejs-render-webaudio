@@ -10,6 +10,7 @@ module.exports = function (config) {
             "jasmine"
         ],
         files: [
+            "node_modules/morsejs/src/morsejs.js",
             "src/**/*.js",
             "test/**/*.js"
         ],

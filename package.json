@@ -1,6 +1,6 @@
 {
   "name": "morsejs-render-webaudio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Plugin to render morsejs output through the HTML WebAudio API",
   "main": "src/morsejs-render-webaudio",
   "scripts": {

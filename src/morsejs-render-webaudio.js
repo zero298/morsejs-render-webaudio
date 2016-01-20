@@ -5,6 +5,7 @@
 (function (root, factory) {
     "use strict";
 
+    /*istanbul ignore next*/
     if (typeof define === "function" && define.amd) {
         // AMD
         define(["morsejs"], factory);
@@ -19,8 +20,7 @@
     "use strict";
 
     // Predefine our vars
-    var
-        exports,
+    var exports,
         DURATION_LONG,
         DURATION_SHORT,
         SIGNAL_STRENGTH_OFF,
@@ -28,50 +28,58 @@
 
     /**
      * Morse code WebAudio rendering module
-     * @module morsejs/render/WebAudio
+     * @module morsejs-render-webaudio
      */
     exports = {};
 
     /**
      * The length of time a long signal lasts
-     * @constant {Number}
+     * @memberof module:morsejs-render-webaudio
+     * @constant
+     * @type {Number}
+     * @default
      */
     DURATION_LONG = 100;
     /**
      * The length of time a short signal lasts
-     * @constant {Number}
+     * @memberof module:morsejs-render-webaudio
+     * @constant
+     * @type {Number}
+     * @default
      */
-    DURATION_SHORT = (DURATION_LONG * 0.5);
+    DURATION_SHORT = 50;
     /**
      * The frequency of the signal while off
-     * @constant {Number}
+     * @memberof module:morsejs-render-webaudio
+     * @constant
+     * @type {Number}
+     * @default
      */
     SIGNAL_STRENGTH_OFF = 0;
     /**
      * The frequency of the signal while on
-     * @constant {Number}
+     * @memberof module:morsejs-render-webaudio
+     * @constant
+     * @type {Number}
+     * @default
      */
     SIGNAL_STRENGTH_ON = 500;
 
     /**
      * Function figure out how long a signal should play
-     * @memberof module:morsejs/render/WebAudio
-     * @inner
+     * @memberof module:morsejs-render-webaudio
      * @param {Number} signal The signal to find the duration of
      * @returns {Number} The duration of the signal given
      */
     function getSignalTime(signal) {
-        var
-            timeDuration = 0,
-            longDuration = DURATION_LONG,
-            shortDuration = DURATION_SHORT;
+        var timeDuration = 0;
 
         switch (signal) {
         case morsejs.signal.SHORT:
-            timeDuration = shortDuration;
+            timeDuration = DURATION_SHORT;
             break;
         default:
-            timeDuration = longDuration;
+            timeDuration = DURATION_LONG;
             break;
         }
         return timeDuration;
@@ -79,8 +87,7 @@
 
     /**
      * Function to determine the strength of a signal
-     * @memberof module:morsejs/render/WebAudio
-     * @inner
+     * @memberof module:morsejs-render-webaudio
      * @param {Number} signal The signal to find the strength of
      * @returns {Number} The frequency strength of the signal given
      */
@@ -99,8 +106,7 @@
 
     /**
      * Recursive function to play a message over WebAudio
-     * @memberof module:morsejs/render/WebAudio
-     * @inner
+     * @memberof module:morsejs-render-webaudio
      * @param {String} message The message to play
      * @param {Number} index The index of the signal within the message to play
      * @param {OscillatorNode} oscillator The oscilator used to play the message
@@ -121,7 +127,7 @@
 
     /**
      * Function to play a morse message over WebAudio
-     * @memberof module:morsejs/render/WebAudio
+     * @memberof module:morsejs-render-webaudio
      * @param {AudioContext} actx The WebAudio context
      * @param {String} message The message to play
      */
@@ -143,6 +149,13 @@
     }
 
     // Export stuff
+    exports.DURATION_LONG = DURATION_LONG;
+    exports.DURATION_SHORT = DURATION_SHORT;
+    exports.SIGNAL_STRENGTH_OFF = SIGNAL_STRENGTH_OFF;
+    exports.SIGNAL_STRENGTH_ON = SIGNAL_STRENGTH_ON;
+    exports.getSignalTime = getSignalTime;
+    exports.getSignalStrength = getSignalStrength;
+    exports.transmitMessage = transmitMessage;
     exports.playMorse = playMorse;
 
     // Return our module
